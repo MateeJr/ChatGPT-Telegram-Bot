@@ -559,7 +559,7 @@ async def start(update, context): # 当用户输入/start时，返回文本
     if (len(context.args) == 1):
         api_key = context.args[1]
         Users.set_config(convo_id, "api_key", api_key)
-        Users.set_config(convo_id, "api_url", "https://api.openai.com/v1/chat/completions")
+        Users.set_config(convo_id, "api_url", "https://api.unify.ai/v0")
         update_ENGINE(chat_id=convo_id)
 
     await update.message.reply_text(escape(message), parse_mode='MarkdownV2', disable_web_page_preview=True)
