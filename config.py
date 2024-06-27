@@ -148,7 +148,7 @@ def update_ENGINE(data = None, chat_id=None):
     api_url = Users.get_config(chat_id, "api_url")
     if api_key:
         ChatGPTbot = chatgpt(api_key=f"{api_key}", api_url=api_url, engine=engine, system_prompt=systemprompt, temperature=temperature)
-        SummaryBot = chatgpt(api_key=f"{api_key}", api_url=api_url, engine="gpt-3.5-turbo", system_prompt=systemprompt, temperature=temperature)
+        SummaryBot = chatgpt(api_key=f"{api_key}", api_url=api_url, engine="gpt-4o@openai", system_prompt=systemprompt, temperature=temperature)
     if CLAUDE_API and "claude-2.1" in engine:
         claudeBot = claude(api_key=f"{CLAUDE_API}", engine=engine, system_prompt=claude_systemprompt, temperature=temperature)
     if CLAUDE_API and "claude-3" in engine:
@@ -317,12 +317,7 @@ def create_buttons(strings, plugins_status=False, lang="English", button_text=No
     return buttons
 
 initial_model = [
-    "gpt-4o",
-    "gpt-4-turbo-2024-04-09",
-    "gpt-3.5-turbo",
-    "claude-3-opus-20240229",
-    "claude-3-5-sonnet-20240620",
-    "claude-3-haiku-20240307",
+    "gpt-4o@openai",
 ]
 
 if GROQ_API_KEY:
