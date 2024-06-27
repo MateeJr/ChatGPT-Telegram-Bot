@@ -14,7 +14,7 @@ PORT = int(os.environ.get('PORT', '8080'))
 BOT_TOKEN = os.environ.get('BOT_TOKEN', None)
 
 GPT_ENGINE = os.environ.get('GPT_ENGINE', 'gpt-4o')
-API_URL = os.environ.get('API_URL', 'https://api.openai.com/v1/chat/completions')
+API_URL = os.environ.get('API_URL', 'https://api.unify.ai/v0')
 API = os.environ.get('API', None)
 WEB_HOOK = os.environ.get('WEB_HOOK', None)
 CHAT_MODE = os.environ.get('CHAT_MODE', "global")
@@ -54,9 +54,9 @@ class UserConfig:
     def __init__(self,
         user_id: str = None,
         language="English",
-        api_url="https://api.openai.com/v1/chat/completions",
+        api_url="https://api.unify.ai/v0",
         api_key=None,
-        engine="gpt-4o",
+        engine="gpt-4o@openai",
         mode="global",
         preferences=None,
         plugins=None,
